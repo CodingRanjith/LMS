@@ -1,0 +1,190 @@
+@mixin mobile {
+    @media screen and (max-width: 480px) {
+      @content;
+    }
+  }
+  @mixin mobile {
+    @media screen and (max-width: 240px) {
+      @content;
+    }
+  }  
+  @mixin tablet {
+    @media screen and (max-width: 768px) {
+      @content;
+    }
+  }
+  @mixin laptop {
+    @media screen and (max-width: 1200px) {
+      @content;
+    }
+  }
+
+  .formContainer {
+    background-image: linear-gradient(to right, #00023b, #00023b);
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .formWrapper {
+      background-color: #eee9e9;
+      padding: 60px 100px;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      @include tablet {
+        padding: 50px 80px;
+      }
+      @include mobile{
+        padding: 40px 60px;
+      }
+  
+      .logo {
+        font-size: 26px;
+        margin: 0;
+        padding: 0;
+        line-height: 1;
+        font-weight: 700;
+        letter-spacing: 0.5px;
+        text-transform: uppercase;
+        color: #0b412b;
+        gap : 15px;
+        @include tablet {
+          font-size: 18px;
+        }
+      }
+
+      .logo-img {
+        max-height: 80px;
+      }
+  
+      .title {
+        color: #5d5b8d;
+        font-size: 12px;
+      }
+  
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+  
+        input[type="email"], 
+        input[type="password"],
+        input[type="text"] {
+        width: 400px;
+        height: 50px;
+       padding: 12px 15px;
+       border: 1px solid #999;
+       border-radius: 5px;
+       font-size: 16px;
+       transition: border-color 0.3s ease;
+       @include tablet {
+      width: 200px;
+      }
+      @include mobile {
+       width: 200px;
+   }
+}
+
+input[type="email"]:focus, 
+input[type="password"]:focus {
+  border-color: #C06C84;
+  outline: none;
+}
+          
+  
+        button {
+          display: block;
+          width: 100%;
+          padding: 10px 12px;
+          background-color: #C06C84;
+          color: #fff;
+          border: none;
+          border-radius: 5px;
+          font-size: 18px;
+          cursor: pointer;
+          transition: background-color 0.3s ease;
+        }
+
+        button:hover{
+          background-color: #A75577;
+        }
+  
+        label {
+          display: block;
+          margin-bottom: 8px;
+          font-weight: 600;
+          color: #555;
+  
+          img {
+            width: 32px;
+          }
+        }
+      }
+      p {
+        color: #22aa86;
+        font-size: 14px;
+        margin-top: 10px;
+        @include tablet {
+          font-size: 12px;
+        }
+        @include mobile {
+          font-size: 12px;
+        }
+      }
+    }
+  }
+
+  /* ... existing styles ... */
+
+.remember-me {
+  display: flex;
+  align-items: center;
+  margin: 10px 0;
+}
+
+.remember-me input[type="checkbox"] {
+  margin-right: 10px;
+}
+
+.remember-me label {
+  font-weight: normal;
+  cursor: pointer;
+}
+
+  
+  .home {
+    background-color: #22aa86;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  
+    .container {
+      width: 100%;
+      height: 100%;
+      display: flex;
+      overflow: hidden;
+      @include tablet {
+       width: 100%;
+      }
+      @include mobile{
+        width: 100%;
+      }
+  
+    }
+  }
+
+
+/* Optional: LMS Brand or Logo */
+.brand {
+  text-align: center;
+  margin-bottom: 25px;
+}
+
+.brand img {
+  max-width: 180px;
+  height: auto;
+}
